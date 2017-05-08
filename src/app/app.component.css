@@ -1,0 +1,19 @@
+md-sidenav-container, .content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+md-sidenav {
+  width: 300px;
+}
+
+.mat-sidenav-container {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+.docs-component-viewer-sidenav {
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}

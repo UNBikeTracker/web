@@ -1,0 +1,8 @@
+.sebm-google-map-container {
+  height: 300px;
+}
+
+.resize {
+  max-width: 50%;
+  max-height: 50%;
+}

@@ -1,0 +1,23 @@
+<div class="col s6 offset-s3" style="margin-top: 20%">
+  <md-card>
+    <md-card-content>
+      <form materialize [formGroup]="loginForm" (ngSubmit)="sendLogin(loginForm)">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="username" type="text" formControlName="username">
+            <label for="username">Nombre de usuario</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="password" type="password" formControlName="password">
+            <label for="password">Contraseña</label>
+          </div>
+        </div>
+        <button md-raised-button type="submit" [disabled]="!loginForm.valid">Enviar</button>
+      </form>
+      <div *ngIf="error" class="mat-warn">
+        {{error}}
+      </div>
+    </md-card-content>
+  </md-card>
+</div>
+
