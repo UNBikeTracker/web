@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotComponent } from './forgot/forgot.component';
-import { MdButtonModule, MdCardModule, MdInputModule } from "@angular/material";
+import { MdButtonModule, MdCardModule, MdInputModule, MdSelectModule } from "@angular/material";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     MdInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MdButtonModule
+    MdButtonModule,
+    MdSelectModule
   ],
   declarations: [LoginComponent, SignupComponent, ForgotComponent]
 })

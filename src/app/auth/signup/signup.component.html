@@ -1,3 +1,42 @@
-<p>
-  signup works!
-</p>
+<md-card style="margin-top: 15%;">
+    <form [formGroup]="signupForm" (ngSubmit)="sendSignupForm(signupForm)">
+      <table>
+        <tr>
+          <td>
+              <input mdInput formControlName="firstName" placeholder="Primer nombre">
+          </td>
+          <td>
+              <input mdInput formControlName="lastName" placeholder="Apellidos">
+          </td>
+          <td>
+            <input mdInput formControlName="document" placeholder="Documento">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input mdInput type="email" formControlName="email" placeholder="Correo electrónico">
+          </td>
+          <td>
+            <input mdInput formControlName="phone" placeholder="Teléfono">
+          </td>
+          <td>
+            <input mdInput formControlName="address" type="text" placeholder="Dirección">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input mdInput formControlName="username" placeholder="Nombre de usuario">
+          </td>
+          <div formGroupName="passwords">
+            <td>
+              <input mdInput formControlName="password" type="password" placeholder="Contraseña">
+            </td>
+            <td>
+              <input mdInput formControlName="confirmPassword" type="password" placeholder="Confirmar contraseña">
+            </td>
+          </div>
+        </tr>
+      </table>
+      <button [disabled]="!signupForm.valid" type="submit" md-raised-button>Enviar</button>
+    </form>
+</md-card>
