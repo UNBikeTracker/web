@@ -1,16 +1,23 @@
-import { NgModule } from '@angular/core';
+import { MdButtonModule, MdSidenavModule, MdToolbarModule, MdIconModule  } from "@angular/material";
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { MdSidenavModule } from "@angular/material";
+import { NgModule } from '@angular/core';
+
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    MdSidenavModule
+    MdSidenavModule,
+    RouterModule,
+    MdButtonModule,
+    MdToolbarModule,
+    MdIconModule
   ],
   declarations: [NavbarComponent, SidebarComponent, NotFoundComponent],
   exports:[NavbarComponent, SidebarComponent]
 })
+
 export class LayoutsModule { }

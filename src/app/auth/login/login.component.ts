@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   error: string;
   private response: any;
   constructor(private fb: FormBuilder, private rest: RestService) { }
+
   ngOnInit() {
     this.loginForm = this.fb.group({
       username: [null, Validators.compose([Validators.required, Validators.minLength(6)])],
@@ -21,9 +22,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  sendLogin(formValue: FormGroup){
-    console.log(formValue.value)
-    this.rest.postLogin(JSON.stringify(formValue.value))
+  sendLogin(loginForm: FormGroup){
+    let requestData = {
+      username: loginForm.controls['username'].value,
+      password: loginForm.controls['password'].value
+    };
+
+    this.rest.post('auth/signin', requestData)
       .subscribe(
         response => this.response = response,
         error => this.error = error,

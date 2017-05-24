@@ -35,22 +35,24 @@ export class SignupComponent implements OnInit {
   }
 
   sendSignupForm(signupForm: any) {
-    const firstName = signupForm.controls['firstName'].value;
-    const lastName = signupForm.controls['lastName'].value;
-    const document = signupForm.controls['document'].value;
-    const email = signupForm.controls['email'].value;
-    const phone = signupForm.controls['phone'].value;
-    const address = signupForm.controls['address'].value;
-    const username = signupForm.controls['username'].value;
-    const password = (<FormGroup> signupForm.controls['passwords']).controls['password'].value;
-    const confirmPassword = (<FormGroup> signupForm.controls['passwords']).controls['confirmPassword'].value;
-    const request = { firstName: firstName, lastName: lastName, document: document, email: email, phone: phone, address: address, username: username, password: password, confirmPassword: confirmPassword};
-    this.restService.postLogin(JSON.stringify(request))
+    let requestData = {
+      firstName: signupForm.controls['firstName'].value,
+      lastName: signupForm.controls['lastName'].value,
+      document: signupForm.controls['document'].value,
+      email: signupForm.controls['email'].value,
+      phone: signupForm.controls['phone'].value,
+      address: signupForm.controls['address'].value,
+      username: signupForm.controls['username'].value,
+      password: (<FormGroup> signupForm.controls['passwords']).controls['password'].value,
+      confirmPassword: (<FormGroup> signupForm.controls['passwords']).controls['confirmPassword'].value
+    };
+    this.restService.post('auth/signup', requestData)
       .subscribe(
         response => {
           if (response.status === 200) {
             this.router.navigate(['auth/login']);
-          }},
+          }
+        },
         error => error = error,
         () => { }
       );

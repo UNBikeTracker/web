@@ -1,40 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import 'hammerjs'
+import 'hammerjs';
 
-
-
-import { AppComponent } from './app.component';
+import { MaterialModule, MdButtonModule, MdSidenavModule, MdToolbarModule, MdIconModule  } from "@angular/material";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from "angular2-materialize";
+
+import { LayoutsModule } from "./layouts/layouts.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthModule } from "./auth/auth.module";
 import { HomeModule } from "./home/home.module";
 import { MapModule } from "./map/map.module";
-import { AgmCoreModule } from "@agm/core";
-import { MdButtonModule, MdSidenavModule, MdToolbarModule } from "@angular/material";
-import { LayoutsModule } from "./layouts/layouts.module";
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
+
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpModule,
+
     MaterializeModule,
+    FlexLayoutModule,
     MdSidenavModule,
     MdButtonModule,
     MdToolbarModule,
-
+    MdIconModule,
 
     AuthModule,
     HomeModule,
     MapModule,
     LayoutsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

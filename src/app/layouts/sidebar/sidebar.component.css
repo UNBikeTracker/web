@@ -1,0 +1,7 @@
+md-sidenav {
+  width: 300px;
+}
+
+.docs-component-viewer-sidenav {
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}

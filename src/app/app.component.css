@@ -1,19 +1,20 @@
-md-sidenav-container, .content {
+.root-container {
+  height: 100%;
+  width: 100%;
+}
+
+md-sidenav-container.docs-component-viewer-sidenav-container {
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 100% !important;
+  background-image: url('https://static.pexels.com/photos/111157/pexels-photo-111157.jpeg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-md-sidenav {
-  width: 300px;
-}
-
-.mat-sidenav-container {
-  position: absolute;
-  box-sizing: border-box;
-  -webkit-overflow-scrolling: touch;
-}
-
-.docs-component-viewer-sidenav {
-  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+.main-panel {
+  margin: 4em;
+  padding: 20px;
 }
